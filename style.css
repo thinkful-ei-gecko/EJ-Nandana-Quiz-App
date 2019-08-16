@@ -18,7 +18,7 @@ body {
 
 /*
 
-Above is all the CSS for the background and all attributes
+-----------------Above is all the CSS for the background and all attributes-----------------
 
 
 */
@@ -61,13 +61,13 @@ button:hover{
     width: 220px;
 }
 
-.hideme {
+.hideMe {
     display: none;
 }
 
 /*
 
-Above is all the CSS for the header and children attributes
+-----------------Above is all the CSS for the header and children attributes-----------------
 
 
 */
@@ -83,6 +83,36 @@ Above is all the CSS for the header and children attributes
     margin-top: 100px;
     padding: 16px 16px;
 }
+
+.questionBlockRight {
+    display: block;
+    width: 900px;
+    height: 700px;
+    background-color: rgba(245, 245, 245, 0.137);
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 100px;
+    padding: 16px 16px;
+}
+
+.questionBlockWrong {
+    display: block;
+    width: 900px;
+    height: 700px;
+    background-color: rgba(245, 245, 245, 0.137);
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 100px;
+    padding: 16px 16px;
+}
+
+/*
+
+-----------------ABOVE WILL DISPLAY RIGHT AND WRONG-----------------
+
+*/
 
 .question {
     margin-top: 200px;
@@ -114,10 +144,26 @@ Above is all the CSS for the header and children attributes
     background-color: salmon;
 }
 
+/*
+
+-----------------BUTTON ATTRIBUTES BELOW-----------------
+
+*/
+
 .submitButton{
     color:black;
 }
-    
-    
+
+.nextQuestion {
+    color: black;
+}
+
+.restartButton {
+    margin: 10px;
+    color: black;
+    width: 20%;
+    height: 5%;
+    font-size: 16px;
+}
    
 
