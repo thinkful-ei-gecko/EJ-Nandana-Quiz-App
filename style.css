@@ -88,3 +88,8 @@ Above is all the CSS for the header and children attributes
     margin-top: 200px;
     font-size: 24px;
 }
+
+.questionImg {
+    width: 300px;
+    height: 300px;
+}
