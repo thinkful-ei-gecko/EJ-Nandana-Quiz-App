@@ -97,4 +97,4 @@ function startQuiz() {
 }
 
 $(startQuiz);
-$(randomQuestion);
+// $(randomQuestion);
