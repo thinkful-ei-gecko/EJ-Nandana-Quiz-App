@@ -126,11 +126,6 @@ h1 {
     font-size: 24px;
 }
 
-.questionImg {
-    width: 300px;
-    height: 300px;
-}
-
 
 .answerBlock {
     display: flex;
@@ -193,7 +188,7 @@ label:hover, label:focus{
 }
 
 .four {
-    background-color: rgb(255, 232, 130);
+     background: #4c5062;
 }
 
 fieldset {
@@ -234,5 +229,22 @@ fieldset {
     height: 5%;
     font-size: 16px;
 }
-   
 
+/*
+
+-----------------Question ATTRIBUTES BELOW-----------------
+
+*/
+
+.questionImg{
+    width: 40%;
+    height: 45%;
+    border: solid currentColor 4px;
+    margin-top: 10px;
+    
+}
+
+.ansImg {
+    width: 50%;
+    margin-top: 10px;
+}

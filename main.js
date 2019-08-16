@@ -73,7 +73,7 @@ function rightAnswer() {
     </div>`)
 
     $('main').append(`<div class="questionBlockRight">
-    <img class="questionImg" src="./images/like.png">
+    <img class="ansImg" src="./images/like.png">
     
     <h2>YOU GOT IT RIGHT!</h2>
 
@@ -88,7 +88,7 @@ function rightAnswer() {
 function wrongAnswer() {
     let correctAnswer = `${STORE[interval].correntAnswer}`;
     $('main').append(`<div class="questionBlockWrong">
-    <img class="questionImg" src="./images/tools.png">
+    <img class="ansImg" src="./images/tools.png">
     
     <h2>YOU GOT IT WRONG!</h2>
     <p>The correct answer was ${correctAnswer}!</p>
