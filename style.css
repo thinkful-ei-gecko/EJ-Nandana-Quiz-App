@@ -23,6 +23,12 @@ body {
 
 */
 
+/*
+
+-----------------WILL DISPLAY HOME SCREEN-----------------
+
+*/
+
 header {
     color: white;
     text-align: center;
@@ -50,9 +56,10 @@ h1 {
     width: 8%;
 }
 
-button:hover{
+.beginQuiz:hover{
     cursor: pointer;
     background-color: rgb(41, 69, 112);
+    color: rgb(237, 233, 222);
 }
 
 .icon {
@@ -80,7 +87,7 @@ button:hover{
     text-align: center;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 100px;
+    margin-top: 280px;
     padding: 16px 16px;
 }
 
@@ -88,11 +95,11 @@ button:hover{
     display: block;
     width: 900px;
     height: 700px;
-    background-color: rgba(245, 245, 245, 0.137);
+    background-color: rgba(212, 255, 195, 0.137);
     text-align: center;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 100px;
+    margin-top: 280px;
     padding: 16px 16px;
 }
 
@@ -100,11 +107,11 @@ button:hover{
     display: block;
     width: 900px;
     height: 700px;
-    background-color: rgba(245, 245, 245, 0.137);
+    background-color: rgba(255, 197, 197, 0.137);
     text-align: center;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 100px;
+    margin-top: 280px;
     padding: 16px 16px;
 }
 
@@ -125,23 +132,73 @@ button:hover{
 }
 
 
-.answerBlock1{
-    display:inline;
+.answerBlock {
+    display: flex;
     flex-direction: row;
     padding: 20px;
+    text-align: center;
+    text-decoration: none;
     margin-bottom: 10px;
     cursor:pointer;
-    width:40%;
-    background-color: salmon;
+    width: 40%px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    transition: all 0.3s ease-out;
+    font-weight: bold;
+
 }
-.answerBlock2{
-    display:inline-block;
-    flex-direction: row;
-    padding: 20px;
-    margin-bottom:10px;
-    cursor:pointer;
-    width:40%;
-    background-color: salmon;
+
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ffffff;
+    transition: 0.2s all linear;
+    outline: none;
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
+}
+input:checked {
+    border: 8px solid #000000bb;
+}
+input[type=radio] {
+    flex: 0 0 auto;
+    margin-right: 10px;
+}
+
+form button:hover, form button:focus {
+    background-color: #363946;
+    color: #ebca52
+}
+
+label:hover, label:focus{
+    background-color: #47a19d;
+}
+
+.one {
+    background-color: rgb(192, 98, 255);
+}
+
+.two {
+    background-color: rgb(255, 165, 155);
+}
+
+.three {
+    background-color: rgb(107, 176, 255);
+}
+
+.four {
+    background-color: rgb(255, 232, 130);
+}
+
+fieldset {
+    border: none;
+    margin-top: 25px;
 }
 
 /*
@@ -151,7 +208,19 @@ button:hover{
 */
 
 .submitButton{
-    color:black;
+    margin: 10px;
+    color: rgb(255, 255, 255);
+    width: 40%;
+    height: 50px;
+    font-size: 16px;
+    background-color: rgb(143, 223, 180);
+    transition: all 0.3s ease-out;
+}
+
+.submitButton:hover{
+    background-color: rgb(129, 199, 162);
+    cursor: pointer;
+    color: white
 }
 
 .nextQuestion {

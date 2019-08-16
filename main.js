@@ -1,34 +1,36 @@
 'use strict';
 /*eslint-env jquery*/
 
-function randomNumbergenerator(){
-    let questionArray=[1];
-    for (let i=1;questionArray.length<5;i++){
-      let randomNumber=Math.floor(Math.random()*10);
-      if(questionArray.indexOf(randomNumber) === -1){
-        questionArray.push(randomNumber);
-      }
-    
-    }
-    return questionArray;
-   }
-
-let car = randomNumbergenerator();
-console.log(car);
 let interval = 0;
-let carInterval = car[interval];
 let score = 0;
+
+// function randomNumbergenerator(){
+//     let questionArray=[1];
+//     for (let i=1;questionArray.length<5;i++){
+//       let randomNumber=Math.floor(Math.random()*10);
+//       if(questionArray.indexOf(randomNumber) === -1){
+//         questionArray.push(randomNumber);
+//       }
+
+//     }
+//     return questionArray;
+//    }
+
+// let car = randomNumbergenerator();
+
+
+// console.log(car);
 
 function loadQuestion() {
     $('main').append(`<div class="questionBlock">
-    <img class="questionImg" src="${STORE[carInterval].img}">
+    <img class="questionImg" src="${STORE[interval].img}">
     
     <form>
         <fieldset>
-            <label ><input type="radio" value='${STORE[carInterval].questionOptions[0]}' name="answer" required><span>${STORE[carInterval].questionOptions[0]}</span></label>
-            <label ><input type="radio" value='${STORE[carInterval].questionOptions[1]}' name="answer" required><span>${STORE[carInterval].questionOptions[1]}</span></label>
-            <label ><input type="radio" value='${STORE[carInterval].questionOptions[2]}' name="answer" required><span>${STORE[carInterval].questionOptions[2]}</span></label>
-            <label ><input type="radio" value='${STORE[carInterval].questionOptions[3]}' name="answer" required><span>${STORE[carInterval].questionOptions[3]}</span></label>
+            <label class="answerBlock one"><input type="radio" value='${STORE[interval].questionOptions[0]}' name="answer" required><span>${STORE[interval].questionOptions[0]}</span></label>
+            <label class="answerBlock two"><input type="radio" value='${STORE[interval].questionOptions[1]}' name="answer" required><span>${STORE[interval].questionOptions[1]}</span></label>
+            <label class="answerBlock three"><input type="radio" value='${STORE[interval].questionOptions[2]}' name="answer" required><span>${STORE[interval].questionOptions[2]}</span></label>
+            <label class="answerBlock four"><input type="radio" value='${STORE[interval].questionOptions[3]}' name="answer" required><span>${STORE[interval].questionOptions[3]}</span></label>
             <button type="submit" class="submitButton">Submit</button>
         </fieldset>
     </form>
@@ -42,7 +44,7 @@ function checkQuestion() {
         event.preventDefault();
         let selectedAnswer = $('input:checked');
         let answer = selectedAnswer.val();
-        let correctAnswer = `${STORE[carInterval].correntAnswer}`;
+        let correctAnswer = `${STORE[interval].correntAnswer}`;
 
         if (correctAnswer === answer) {
             console.log('You are right!');
@@ -51,8 +53,8 @@ function checkQuestion() {
             console.log('Wrong! The correct answer is: ' + correctAnswer);
             wrongAnswer();
         }
-        $('.questionBlock').remove();
         countInterval();
+        $('.questionBlock').remove();
 
 
         console.log(selectedAnswer);
@@ -63,7 +65,7 @@ function checkQuestion() {
 }
 
 function rightAnswer() {
-    let correctAnswer = `${STORE[carInterval].correntAnswer}`
+    let correctAnswer = `${STORE[interval].correntAnswer}`
     updateScore();
     $('header').html(`
     <div class="topBanner">
@@ -84,7 +86,7 @@ function rightAnswer() {
 }
 
 function wrongAnswer() {
-    let correctAnswer = `${STORE[carInterval].correntAnswer}`;
+    let correctAnswer = `${STORE[interval].correntAnswer}`;
     $('main').append(`<div class="questionBlockWrong">
     <img class="questionImg" src="./images/tools.png">
     
@@ -102,7 +104,7 @@ function countInterval() {
     interval++;
 }
 
-function updateScore(){
+function updateScore() {
     score++;
 }
 
@@ -111,14 +113,14 @@ function generateNewQuestion() {
         event.preventDefault();
         $('main').find('div').remove();
         if (interval < 5){$('main').append(`<div class="questionBlock">
-        <img class="questionImg" src="${STORE[carInterval].img}">
+        <img class="questionImg" src="${STORE[interval].img}">
         
         <form>
             <fieldset>
-                <label ><input type="radio" value='${STORE[carInterval].questionOptions[0]}' name="answer" required><span>${STORE[carInterval].questionOptions[0]}</span></label>
-                <label ><input type="radio" value='${STORE[carInterval].questionOptions[1]}' name="answer" required><span>${STORE[carInterval].questionOptions[1]}</span></label>
-                <label ><input type="radio" value='${STORE[carInterval].questionOptions[2]}' name="answer" required><span>${STORE[carInterval].questionOptions[2]}</span></label>
-                <label ><input type="radio" value='${STORE[carInterval].questionOptions[3]}' name="answer" required><span>${STORE[carInterval].questionOptions[3]}</span></label>
+                <label class="answerBlock one"><input type="radio" value='${STORE[interval].questionOptions[0]}' name="answer" required><span>${STORE[interval].questionOptions[0]}</span></label>
+                <label class="answerBlock two"><input type="radio" value='${STORE[interval].questionOptions[1]}' name="answer" required><span>${STORE[interval].questionOptions[1]}</span></label>
+                <label class="answerBlock three"><input type="radio" value='${STORE[interval].questionOptions[2]}' name="answer" required><span>${STORE[interval].questionOptions[2]}</span></label>
+                <label class="answerBlock four"><input type="radio" value='${STORE[interval].questionOptions[3]}' name="answer" required><span>${STORE[interval].questionOptions[3]}</span></label>
                 <button type="submit" class="submitButton">Submit</button>
             </fieldset>
         </form>
