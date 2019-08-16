@@ -93,3 +93,31 @@ Above is all the CSS for the header and children attributes
     width: 300px;
     height: 300px;
 }
+
+
+.answerBlock1{
+    display:inline;
+    flex-direction: row;
+    padding: 20px;
+    margin-bottom: 10px;
+    cursor:pointer;
+    width:40%;
+    background-color: salmon;
+}
+.answerBlock2{
+    display:inline-block;
+    flex-direction: row;
+    padding: 20px;
+    margin-bottom:10px;
+    cursor:pointer;
+    width:40%;
+    background-color: salmon;
+}
+
+.submitButton{
+    color:black;
+}
+    
+    
+   
+
