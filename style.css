@@ -14,6 +14,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+    height: 100%;
 }
 
 /*
@@ -43,6 +44,10 @@ h1 {
     padding: 14px 14px;
 }
 
+.myForm p {
+    margin-top: 20px;
+}
+
 .beginQuiz {
     display: inline-block;
     margin-top: 20px;
@@ -63,7 +68,7 @@ h1 {
 }
 
 .icon {
-    margin-top: 200px;
+    margin-top: 300px;
     height: 220px;
     width: 220px;
 }
@@ -82,37 +87,61 @@ h1 {
 .questionBlock {
     display: block;
     width: 900px;
-    height: 700px;
+    height: 730px;
     background-color: rgba(245, 245, 245, 0.137);
     text-align: center;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 280px;
+    margin-top: 200px;
     padding: 16px 16px;
 }
 
 .questionBlockRight {
     display: block;
     width: 900px;
-    height: 700px;
+    height: 730px;
     background-color: rgba(212, 255, 195, 0.137);
     text-align: center;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 280px;
-    padding: 16px 16px;
+    margin-top: 200px;
+    padding: 60px 16px;
 }
 
 .questionBlockWrong {
     display: block;
     width: 900px;
-    height: 700px;
+    height: 730px;
     background-color: rgba(255, 197, 197, 0.137);
     text-align: center;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 280px;
-    padding: 16px 16px;
+    margin-top: 200px;
+    padding: 60px 16px;
+}
+
+.loserBlock {
+    display: block;
+    width: 900px;
+    height: 730px;
+    background-color: rgba(255, 197, 197, 0.137);
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 200px;
+    padding: 60px 16px;
+}
+
+.winnerBlock {
+    display: block;
+    width: 900px;
+    height: 730px;
+    background-color: rgba(212, 255, 195, 0.137);
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 200px;
+    padding: 60px 16px;
 }
 
 /*
@@ -213,21 +242,44 @@ fieldset {
 }
 
 .submitButton:hover{
-    background-color: rgb(129, 199, 162);
+    background-color: rgb(111, 167, 137);
     cursor: pointer;
     color: white
 }
 
 .nextQuestion {
-    color: black;
+    margin: 10px;
+    color: rgb(255, 255, 255);
+    width: 30%;
+    height: 50px;
+    font-size: 16px;
+    background-color: rgb(143, 223, 180);
+    transition: all 0.3s ease-out;
+    cursor: pointer;
 }
+
+.nextQuestion:hover{
+    background-color: rgb(111, 167, 137);
+    cursor: pointer;
+    color: white
+}
+
 
 .restartButton {
     margin: 10px;
-    color: black;
-    width: 20%;
-    height: 5%;
+    color: rgb(255, 255, 255);
+    width: 30%;
+    height: 50px;
     font-size: 16px;
+    background-color: rgb(143, 223, 180);
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+}
+
+.restartButton:hover {
+    background-color: rgb(111, 167, 137);
+    cursor: pointer;
+    color: white
 }
 
 /*
@@ -239,12 +291,83 @@ fieldset {
 .questionImg{
     width: 40%;
     height: 45%;
-    border: solid currentColor 4px;
     margin-top: 10px;
     
 }
 
 .ansImg {
-    width: 50%;
+    max-width: 30%;
     margin-top: 10px;
+    border: none;
+    margin-bottom: 120px;
+}
+
+.winnerIcon {
+    border: none;
+    max-width: 30%;
+    margin-right: 40px;
+    margin-top: 10px;
+    margin-bottom: 120px;
+}
+
+.loserIcon {
+    border: none;
+    max-width: 30%;
+    margin-right: 40px;
+    margin-top: 10px;
+    margin-bottom: 100px;
+}
+
+/*
+
+-----------------Question ATTRIBUTES BELOW-----------------
+
+*/
+
+.wrongH {
+    font-size: 50px;
+    margin-bottom: 25px;
+}
+
+.wrongP{
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.rightH {
+    font-size: 50px;
+    margin-bottom: 25px;
+}
+
+.resultH {
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+/*
+
+-----------------Question ATTRIBUTES BELOW-----------------
+
+*/
+
+.topBanner {
+    display: flex;
+    flex-direction: row-reverse;
+    text-align: center;
+    width: 100%;
+    height: 70px;
+    background-color: none;
+}
+
+.topBanner p {
+    font-size: 30px;
+    padding: 14px 14px;
+    margin-right: 150px;
+    margin-top: 100px;
+}
+
+.bannerIcon {
+    display: inline-block;
+    height: 90%;
+    margin-top: 100px;
 }

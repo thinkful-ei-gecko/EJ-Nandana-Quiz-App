@@ -68,14 +68,15 @@ function rightAnswer() {
     let correctAnswer = `${STORE[interval].correntAnswer}`
     updateScore();
     $('header').html(`
-    <div class="topBanner">
-        <p>${score}/10</p>
-    </div>`)
+        <div class="topBanner">
+          <p>${score}/5</p>
+          <img class="bannerIcon" src="./images/engine.png" alt="starting engine">
+        </div>`)
 
     $('main').append(`<div class="questionBlockRight">
     <img class="ansImg" src="./images/like.png">
     
-    <h2>YOU GOT IT RIGHT!</h2>
+    <h2 class="rightH">YOU GOT IT RIGHT!</h2>
 
     <button class="nextQuestion">Next Question</button>
     
@@ -87,11 +88,16 @@ function rightAnswer() {
 
 function wrongAnswer() {
     let correctAnswer = `${STORE[interval].correntAnswer}`;
+    $('header').html(`
+        <div class="topBanner">
+          <p>${score}/5</p>
+          <img class="bannerIcon" src="./images/engine.png" alt="starting engine">
+        </div>`)
     $('main').append(`<div class="questionBlockWrong">
-    <img class="ansImg" src="./images/tools.png">
+    <img class="ansImg" src="./images/tools.png" alt="tools making a X sign">
     
-    <h2>YOU GOT IT WRONG!</h2>
-    <p>The correct answer was ${correctAnswer}!</p>
+    <h2 class="wrongH">YOU GOT IT WRONG!</h2>
+    <p class="wrongP">The correct answer was ${correctAnswer}!</p>
 
     <button class="nextQuestion">Next Question</button>
     
@@ -112,6 +118,11 @@ function generateNewQuestion() {
     $('main').on('click', '.nextQuestion', function (event) {
         event.preventDefault();
         $('main').find('div').remove();
+        $('header').html(`
+        <div class="topBanner">
+          <p>${score}/5</p>
+          <img class="bannerIcon" src="./images/engine.png" alt="starting engine">
+        </div>`)
         if (interval < 5){$('main').append(`<div class="questionBlock">
         <img class="questionImg" src="${STORE[interval].img}">
         
@@ -132,20 +143,20 @@ function generateNewQuestion() {
           });
         if (score < 3){
             $('main').append(`
-        <div class="questionBlock">
-            <img class="questionImg" src="./images/handbrake.png">
+        <div class="loserBlock">
+            <img class="loserIcon" src="./images/handbrake.png">
         
-            <h2>Thanks for trying but it looks like you need to check your 
+            <h2 class="resultH">Thanks for trying but it looks like you need to check your 
             engine and try again!</h2>
             <button type="button" class="restartButton">Take the quiz again</button>
         
         </div>`);} else {
         
         $('main').append(`
-        <div class="questionBlock">
-            <img class="questionImg" src="./images/car-key.png">
+        <div class="winnerBlock">
+            <img class="winnerIcon" src="./images/car-key.png">
         
-            <h2>Great Job! Looks like you really are a car junkie!</h2>
+            <h2 class="resultH">Great Job! Looks like you really are a car junkie!</h2>
             <button type="button" class="restartButton">Take the quiz again</button>
         
         </div>`);
@@ -159,11 +170,12 @@ function startQuiz() {
     $('main').on('click', '.beginQuiz', function (event) {
         event.preventDefault();
         $('main').find('.myForm').remove();
-        $('header').find('img').remove();
+        $('header').find('div').remove();
         loadQuestion();
         $('header').append(`
         <div class="topBanner">
-          <p>${score}/10</p>
+          <p>${score}/5</p>
+          <img class="bannerIcon" src="./images/engine.png" alt="starting engine">
         </div>`)
     });
 }
