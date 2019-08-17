@@ -1,3 +1,6 @@
+'use strict';
+/// in nrr branch
+
 const STORE = [{
     question: 'Lamborghini',
     questionOptions: ['Japan', 'Italy', 'United States', 'Switzerland'],
