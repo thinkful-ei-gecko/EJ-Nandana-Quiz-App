@@ -73,11 +73,10 @@ function rightAnswer() {
           <img class="bannerIcon" src="./images/engine.png" alt="starting engine">
         </div>`)
 
-    $('main').append(`<div class="questionBlockRight">
-    <img class="ansImg" src="./images/like.png">
+    $('main').append(`<div class="rightAnswer">
+    <img class="rightImg" src="./images/like.png">
     
-    <h2 class="rightH">YOU GOT IT RIGHT!</h2>
-
+    <h2 class="">YOU GOT IT RIGHT!</h2>
     <button class="nextQuestion">Next Question</button>
     
     </div>`);
@@ -93,8 +92,8 @@ function wrongAnswer() {
           <p>${score}/5</p>
           <img class="bannerIcon" src="./images/engine.png" alt="starting engine">
         </div>`)
-    $('main').append(`<div class="questionBlockWrong">
-    <img class="ansImg" src="./images/tools.png" alt="tools making a X sign">
+    $('main').append(`<div class="wrongAnswer">
+    <img class="wrongImg" src="./images/tools.png" alt="tools making a X sign">
     
     <h2 class="wrongH">YOU GOT IT WRONG!</h2>
     <p class="wrongP">The correct answer was ${correctAnswer}!</p>
@@ -146,7 +145,7 @@ function generateNewQuestion() {
         <div class="loserBlock">
             <img class="loserIcon" src="./images/handbrake.png">
         
-            <h2 class="resultH">Thanks for trying but it looks like you need to check your 
+            <h2>Thanks for trying but it looks like you need to check your 
             engine and try again!</h2>
             <button type="button" class="restartButton">Take the quiz again</button>
         

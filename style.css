@@ -14,163 +14,251 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    height: 100%;
+    height: auto;
+    width: 100%;
 }
 
 /*
 
------------------Above is all the CSS for the background and all attributes-----------------
-
-
-*/
-
-/*
-
------------------WILL DISPLAY HOME SCREEN-----------------
+-----RESPONSIZE LAYOUT MAIN SCREEN-----
 
 */
 
-header {
-    color: white;
-    text-align: center;
-    display: inline;
+.initial {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20vh;
+}
+
+.icon {
+    width: 50%;
 }
 
 .block1 {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
     text-align: center;
+    margin-top: 10%;
 }
 
-h1 {
-    padding: 14px 14px;
+.block1 h1 {
+    margin-bottom: 5%;
+    font-size: 5vh;
 }
 
-.myForm p {
-    margin-top: 20px;
+.block1 p {
+    margin-top: 5%;
+    font-size: 2vh;
 }
 
 .beginQuiz {
-    display: inline-block;
-    margin-top: 20px;
+    display: block;
+    margin: auto auto;
     padding: 8px 8px;
-    font-size: 15px;
+    font-size: 2.5vh;
     text-decoration: none;
     color: rgb(237, 233, 222);
     background-color: rgb(63, 105, 170);
     border: none;
-    height: 40px;
-    width: 8%;
-}
-
-.beginQuiz:hover{
-    cursor: pointer;
-    background-color: rgb(41, 69, 112);
-    color: rgb(237, 233, 222);
-}
-
-.icon {
-    margin-top: 300px;
-    height: 220px;
-    width: 220px;
-}
-
-.hideMe {
-    display: none;
+    width: 35%;
 }
 
 /*
 
------------------Above is all the CSS for the header and children attributes-----------------
-
+-----RESPONSIZE LAYOUT QUIZ SCREEN-----
 
 */
+
+.topBanner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    height: 10vh;
+    margin-top: 9vh;
+}
+
+.topBanner p {
+    font-size: 4vh;
+    margin-right: 2vh;
+    margin-top: 4vh;
+}
+
+.topBanner img {
+    height: 12vh;
+}
 
 .questionBlock {
-    display: block;
-    width: 900px;
-    height: 730px;
-    background-color: rgba(245, 245, 245, 0.137);
+    margin-top: 6vh;
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 200px;
-    padding: 16px 16px;
+    width: 100%;
+    font-family: 'Heebo', sans-serif;
 }
 
-.questionBlockRight {
-    display: block;
-    width: 900px;
-    height: 730px;
-    background-color: rgba(212, 255, 195, 0.137);
+.submitButton {
+    width: 100%;
+    height: 8vh;
+    left: 0;
+    font-family: 'Heebo', sans-serif;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    background-color: rgb(226, 123, 123);
+    font-size: 3.2vh;
+    border: none;
+}
+/*
+---------------THIS WILL BE THE RIGHT BLOCK---------------
+*/
+
+.rightAnswer {
+    margin-top: 15vh;
+    padding-top: 4vh;
+    width: 100%;
     text-align: center;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 200px;
-    padding: 60px 16px;
+    background-color: rgba(212, 255, 195, 0.150); /* 137 */
 }
 
-.questionBlockWrong {
-    display: block;
-    width: 900px;
-    height: 730px;
-    background-color: rgba(255, 197, 197, 0.137);
-    text-align: center;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 200px;
-    padding: 60px 16px;
-}
-
-.loserBlock {
-    display: block;
-    width: 900px;
-    height: 730px;
-    background-color: rgba(255, 197, 197, 0.137);
-    text-align: center;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 200px;
-    padding: 60px 16px;
-}
-
-.winnerBlock {
-    display: block;
-    width: 900px;
-    height: 730px;
-    background-color: rgba(212, 255, 195, 0.137);
-    text-align: center;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 200px;
-    padding: 60px 16px;
+.rightImg {
+    height: 17vh;
+    width: 17vh;
+    margin: auto auto;
+    margin-bottom: 5vh;
 }
 
 /*
-
------------------ABOVE WILL DISPLAY RIGHT AND WRONG-----------------
-
+---------------END OF RIGHT BLOCK---------------
 */
 
-.question {
-    margin-top: 200px;
-    font-size: 24px;
+/*
+---------------THIS WILL BE THE RIGHT BLOCK---------------
+*/
+
+.wrongAnswer {
+    margin-top: 15vh;
+    padding-top: 4vh;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(255, 197, 197, 0.137);/* 137 */
 }
 
+.wrongImg {
+    height: 17vh;
+    width: 17vh;
+    margin: auto auto;
+    margin-bottom: 5vh;
+}
+
+/*
+---------------END OF RIGHT BLOCK---------------
+*/
+
+/*
+---------------THIS WILL BE THE LOSER BLOCK---------------
+*/
+
+.loserBlock {
+    margin-top: 15vh;
+    padding-top: 4vh;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(255, 197, 197, 0.137);/* 137 */
+}
+
+.loserBlock h2 {
+    font-size: 2.5vh;
+    margin-bottom: 2vh;
+}
+
+.loserIcon {
+    height: 17vh;
+    width: 17vh;
+    margin: auto auto;
+    margin-bottom: 2vh;
+}
+
+.restartButton {
+    width: 25vh;
+    height: 4.5vh;
+    margin-bottom: 4vh;
+    font-family: 'Heebo', sans-serif;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    background-color: rgb(226, 123, 123);
+    font-size: 2.2vh;
+    border: none;
+}
+
+/*
+---------------END OF LOSER BLOCK---------------
+*/
+
+/*
+---------------THIS WILL BE THE WINNING BLOCK---------------
+*/
+
+.wrongAnswer {
+    margin-top: 15vh;
+    padding-top: 4vh;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(255, 197, 197, 0.137);/* 137 */
+}
+
+.wrongImg {
+    height: 17vh;
+    width: 17vh;
+    margin: auto auto;
+    margin-bottom: 5vh;
+}
+
+/*
+---------------END OF WINNING BLOCK---------------
+*/
+
+.nextQuestion {
+    margin-top: 2vh;
+    margin-bottom: 4vh;
+    color: rgb(255, 255, 255);
+    width: 20vh;
+    height: 50px;
+    font-size: 16px;
+    background-color: rgb(98, 161, 233); /*rgb(143, 223, 180)*/
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+    border: none;
+}
+
+/*
+---------------THIS WILL BE THE WRONG BLOCK---------------
+*/
+
+
+.questionImg {
+    height: 22vh;
+    width: 25vh;
+    border-radius: 10%;
+    margin: auto auto;
+    margin-bottom: 5vh;
+}
 
 .answerBlock {
     display: flex;
-    flex-direction: row;
-    padding: 20px;
-    text-align: center;
-    text-decoration: none;
-    margin-bottom: 10px;
-    cursor:pointer;
-    width: 40%px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    transition: all 0.3s ease-out;
-    font-weight: bold;
+    width: 100%;
+    height: 8vh;
 
+    justify-content: center;
+    margin-bottom: 2vh;
+    transition: all 0.3s ease-out;
+    font-size: 3vh;
+    font-weight: bold;
 }
 
 input {
@@ -183,25 +271,20 @@ input {
     border: 2px solid #ffffff;
     transition: 0.2s all linear;
     outline: none;
-    margin-right: 5px;
-    position: relative;
-    top: 2px;
+    margin-top: 2.8vh;
 }
+
+span {
+    margin-top: 2.2vh;
+}
+
 input:checked {
     border: 8px solid #000000bb;
 }
+
 input[type=radio] {
     flex: 0 0 auto;
     margin-right: 10px;
-}
-
-form button:hover, form button:focus {
-    background-color: #363946;
-    color: #ebca52
-}
-
-label:hover, label:focus{
-    background-color: #47a19d;
 }
 
 .one {
@@ -217,157 +300,9 @@ label:hover, label:focus{
 }
 
 .four {
-     background: #4c5062;
+    background: #4c5062;
 }
 
 fieldset {
     border: none;
-    margin-top: 25px;
-}
-
-/*
-
------------------BUTTON ATTRIBUTES BELOW-----------------
-
-*/
-
-.submitButton{
-    margin: 10px;
-    color: rgb(255, 255, 255);
-    width: 40%;
-    height: 50px;
-    font-size: 16px;
-    background-color: rgb(143, 223, 180);
-    transition: all 0.3s ease-out;
-}
-
-.submitButton:hover{
-    background-color: rgb(111, 167, 137);
-    cursor: pointer;
-    color: white
-}
-
-.nextQuestion {
-    margin: 10px;
-    color: rgb(255, 255, 255);
-    width: 30%;
-    height: 50px;
-    font-size: 16px;
-    background-color: rgb(143, 223, 180);
-    transition: all 0.3s ease-out;
-    cursor: pointer;
-}
-
-.nextQuestion:hover{
-    background-color: rgb(111, 167, 137);
-    cursor: pointer;
-    color: white
-}
-
-
-.restartButton {
-    margin: 10px;
-    color: rgb(255, 255, 255);
-    width: 30%;
-    height: 50px;
-    font-size: 16px;
-    background-color: rgb(143, 223, 180);
-    transition: all 0.3s ease-out;
-    cursor: pointer;
-}
-
-.restartButton:hover {
-    background-color: rgb(111, 167, 137);
-    cursor: pointer;
-    color: white
-}
-
-/*
-
------------------Question ATTRIBUTES BELOW-----------------
-
-*/
-
-.questionImg{
-    width: 40%;
-    height: 45%;
-    margin-top: 10px;
-    
-}
-
-.ansImg {
-    max-width: 30%;
-    margin-top: 10px;
-    border: none;
-    margin-bottom: 120px;
-}
-
-.winnerIcon {
-    border: none;
-    max-width: 30%;
-    margin-right: 40px;
-    margin-top: 10px;
-    margin-bottom: 120px;
-}
-
-.loserIcon {
-    border: none;
-    max-width: 30%;
-    margin-right: 40px;
-    margin-top: 10px;
-    margin-bottom: 100px;
-}
-
-/*
-
------------------Question ATTRIBUTES BELOW-----------------
-
-*/
-
-.wrongH {
-    font-size: 50px;
-    margin-bottom: 25px;
-}
-
-.wrongP{
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.rightH {
-    font-size: 50px;
-    margin-bottom: 25px;
-}
-
-.resultH {
-    font-size: 40px;
-    margin-bottom: 40px;
-}
-
-/*
-
------------------Question ATTRIBUTES BELOW-----------------
-
-*/
-
-.topBanner {
-    display: flex;
-    flex-direction: row-reverse;
-    text-align: center;
-    width: 100%;
-    height: 70px;
-    background-color: none;
-}
-
-.topBanner p {
-    font-size: 30px;
-    padding: 14px 14px;
-    margin-right: 150px;
-    margin-top: 100px;
-}
-
-.bannerIcon {
-    display: inline-block;
-    height: 90%;
-    margin-top: 100px;
 }
