@@ -1,38 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Test Your Car Knowledge | Car Quiz</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="style1.css">
 </head>
-
 <body>
-
-    <header>
-        <div>
-            <img class="icon" src="./images/engine.png" alt="starting engine">
+  <header>    
+      <div class="heading">
+          <h1>CAN YOU NAME THE COUNTRY OF ORIGIN OF THE CAR? </h1>
         </div>
-    </header>
-
-    <main>
-        <form class="myForm" action="">
-            <div class="block1">
-                <h1>Start Your Engine</h1>
-                <button class='beginQuiz'>Begin Quiz</button>
-            </div>
-
-        </form>
-    </main>
-
-
-
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous" type='text/javascript'></script>
-        <script src="questions.js"></script>
-    <script src="main.js"></script>
+        <div >
+          <ul class='scores' style='display:none'>
+                  <li>Question: <span id='q1'>1/5</span></li>
+                  <li>Score: <span id='s1'>0</span></li>
+                </ul>
+      </div>
+  </header>
+  <main>
+      <form class="myForm" action="">
+          <div class="block1">
+              <img class="icon" src="./images/engine.png" alt="starting engine">
+              <h2>Start Your Engine!</h2>
+              <button class='beginQuiz'>Begin Quiz</button>
+          </div>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous" type='text/javascript'></script>
+  <script src="questions.js"></script>
+  <script src="main.js"></script>
 </body>
-
 </html>

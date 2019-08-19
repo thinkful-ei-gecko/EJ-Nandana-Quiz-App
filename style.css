@@ -3,148 +3,146 @@
     margin: 0;
     box-sizing: border-box;
     color: white;
-}
-
-body {
+  }
+  
+  body {
+    
+    display:flex;
+    flex-direction: column;
     background-image:
-        linear-gradient(
-        rgba(0, 0, 0, 0.7),
-        rgba(0, 0, 0, 0.7)),
-        url("https://images.unsplash.com/photo-1527247043589-98e6ac08f56c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-/*
-
------------------Above is all the CSS for the background and all attributes-----------------
-
-
-*/
-
-/*
-
------------------WILL DISPLAY HOME SCREEN-----------------
-
-*/
-
-header {
+    linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7)),
+    url("https://images.unsplash.com/photo-1527247043589-98e6ac08f56c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  height: 800px;
+  }
+  
+  header{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    height:10%;
+    width:100%;
+    /*background-color: blue;*/
+    
+  }
+  h1 {
+    display: flex;
     color: white;
     text-align: center;
-    display: inline;
-}
-
-.block1 {
+  }
+  .scores{
+    margin-top: 10px;
+  }
+  header ul li {
+    padding: 10px 20px;
+    list-style: none;
     text-align: center;
-}
-
-h1 {
-    padding: 14px 14px;
-}
-
-.beginQuiz {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 8px 8px;
-    font-size: 15px;
-    text-decoration: none;
-    color: rgb(237, 233, 222);
-    background-color: rgb(63, 105, 170);
+    font-size: 25px;
+    text-transform: uppercase;
+    display: inline;
+  }
+  .beginQuiz {
+    padding: 20px;
     border: none;
-    height: 40px;
-    width: 8%;
-}
-
-.beginQuiz:hover{
+    background-color: #38A9AF;
+    color: #ffffff;
+    font-size: 18px;
+    text-transform: uppercase;
+    border-radius: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 40px
+  }
+  .beginQuiz:hover{
     cursor: pointer;
     background-color: rgb(41, 69, 112);
     color: rgb(237, 233, 222);
-}
-
-.icon {
-    margin-top: 200px;
+  }
+  main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height:80%;
+    width:100%;
+    /*background-color: aqua;*/
+  }
+  .icon {
+    display:flex;
     height: 220px;
     width: 220px;
-}
-
-.hideMe {
-    display: none;
-}
-
-/*
-
------------------Above is all the CSS for the header and children attributes-----------------
-
-
-*/
-
-.questionBlock {
-    display: block;
-    width: 900px;
-    height: 700px;
+  }
+  .block1 {
+    text-align: center;
+  }
+  /* --------------- loadQuestion-----------------  */
+  .questionBlock {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    width:100%;
     background-color: rgba(245, 245, 245, 0.137);
     text-align: center;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 280px;
-    padding: 16px 16px;
-}
-
-.questionBlockRight {
-    display: block;
-    width: 900px;
-    height: 700px;
-    background-color: rgba(212, 255, 195, 0.137);
-    text-align: center;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 280px;
-    padding: 16px 16px;
-}
-
-.questionBlockWrong {
-    display: block;
-    width: 900px;
-    height: 700px;
-    background-color: rgba(255, 197, 197, 0.137);
-    text-align: center;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 280px;
-    padding: 16px 16px;
-}
-
-/*
-
------------------ABOVE WILL DISPLAY RIGHT AND WRONG-----------------
-
-*/
-
-.question {
-    margin-top: 200px;
-    font-size: 24px;
-}
-
-
-.answerBlock {
-    display: flex;
-    flex-direction: row;
+    margin-top: 10px;
+    align-items: center;
+    /*justify-content: center;
+    justify-items: center;*/
+  }
+  .questionImg{
+    align-self: center;
+    width: 30%;
+    height: 45%;
+    border: solid currentColor 4px;
+    margin-top: 10px;
+  }
+  
+  .questionForm{
+    align-self: center;
+    margin-top: 25px;
+    width: 30%;
+  }
+  
+  .questionBlock h2{
+    display:flex;
+    align-self: left;
+  }
+  fieldset {
+    border: none;
+  }
+  .answerBlock {
+    width:100%;
     padding: 20px;
-    text-align: center;
-    text-decoration: none;
     margin-bottom: 10px;
-    cursor:pointer;
-    width: 40%px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+    display: flex;
+    color: #ffffff;
+    text-transform: uppercase;
+    cursor: pointer;
     transition: all 0.3s ease-out;
-    font-weight: bold;
-
-}
-
-input {
+    line-height: 22px;
+  }
+  .answerBlock:hover, label:focus {
+    background-color: #AF6438
+  }
+  .one {
+    background-color: rgb(192, 98, 255);
+  }
+  
+  .two {
+    background-color: rgb(255, 165, 155);
+  }
+  
+  .three {
+    background-color: rgb(16, 116, 141);
+  }
+  
+  .four {
+     background: #242f5e;
+  }
+  input {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -155,96 +153,75 @@ input {
     transition: 0.2s all linear;
     outline: none;
     margin-right: 5px;
-    position: relative;
+    /*position: relative;*/
     top: 2px;
-}
-input:checked {
-    border: 8px solid #000000bb;
-}
-input[type=radio] {
+  }
+  input:checked {
+    border: 8px solid #ebca52;;
+  }
+  input[type=radio] {
     flex: 0 0 auto;
     margin-right: 10px;
-}
-
-form button:hover, form button:focus {
-    background-color: #363946;
-    color: #ebca52
-}
-
-label:hover, label:focus{
-    background-color: #47a19d;
-}
-
-.one {
-    background-color: rgb(192, 98, 255);
-}
-
-.two {
-    background-color: rgb(255, 165, 155);
-}
-
-.three {
-    background-color: rgb(107, 176, 255);
-}
-
-.four {
-     background: #4c5062;
-}
-
-fieldset {
-    border: none;
-    margin-top: 25px;
-}
-
-/*
-
------------------BUTTON ATTRIBUTES BELOW-----------------
-
-*/
-
-.submitButton{
-    margin: 10px;
-    color: rgb(255, 255, 255);
-    width: 40%;
+  }
+  
+  .submitButton{
+    width:50%;
     height: 50px;
-    font-size: 16px;
-    background-color: rgb(143, 223, 180);
-    transition: all 0.3s ease-out;
-}
-
-.submitButton:hover{
+    padding: 10px;
+    border: none;
+    background-color: #38A9AF;
+    color: #ffffff;
+    font-size: 18px;
+    text-transform: uppercase;
+    border-radius: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px
+  }
+  
+  .submitButton:hover{
     background-color: rgb(129, 199, 162);
     cursor: pointer;
     color: white
-}
-
-.nextQuestion {
-    color: black;
-}
-
-.restartButton {
-    margin: 10px;
-    color: black;
-    width: 20%;
-    height: 5%;
-    font-size: 16px;
-}
-
-/*
-
------------------Question ATTRIBUTES BELOW-----------------
-
-*/
-
-.questionImg{
-    width: 40%;
-    height: 45%;
-    border: solid currentColor 4px;
-    margin-top: 10px;
-    
-}
-
-.ansImg {
-    width: 50%;
-    margin-top: 10px;
-}
+  }
+  
+  /* ------------------- registerCallbackCheckAnswer() ------------------------*/
+  
+  .checkAnswer {
+    display: block;
+    width: 900px;
+    height: 700px;
+    background-color: rgba(212, 255, 195, 0.137);
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 16px 16px;
+  }
+  
+  .ansImg {
+    width: 250px;
+    height: auto;
+    display: block;
+    border-radius: 50%;
+    background-color: #38A9AF;
+    margin: auto;
+    padding: 10px;
+    margin-bottom: 20px
+  }
+  .buttonClass {
+      
+    padding: 20px;
+    border: none;
+    background-color: #38A9AF;
+    color: #ffffff;
+    font-size: 18px;
+    text-transform: uppercase;
+    border-radius: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 40px
+  
+  }
+  
+  
+  
