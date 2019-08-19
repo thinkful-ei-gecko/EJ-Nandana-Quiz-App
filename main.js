@@ -20,33 +20,7 @@ function loadQuestion() {
     </form>
     
     </div>`);
-    checkQuestion();
 
-}
-
-function checkQuestion() {
-    $('main').submit(function (event) {
-        event.preventDefault();
-        let selectedAnswer = $('input:checked');
-        let answer = selectedAnswer.val();
-        let correctAnswer = `${STORE[interval].correntAnswer}`;
-
-        if (correctAnswer === answer) {
-            console.log('You are right!');
-            rightAnswer();
-        } else {
-            console.log('Wrong! The correct answer is: ' + correctAnswer);
-            wrongAnswer();
-        }
-        countInterval();
-        $('.questionBlock').remove();
-
-
-        console.log(selectedAnswer);
-        console.log(answer);
-        console.log(correctAnswer);
-
-    });
 }
 
 function rightAnswer() {
@@ -105,72 +79,22 @@ function updateScore() {
 }
 
 function generateNewQuestion() {
-    $('main').on('click', '.nextQuestion', function (event) {
-        event.preventDefault();
-        $('main').find('div').remove();
-        $('header').html(`
-        <div class="topBanner">
-          <p class="questionRightInterval">${score}/5</p>
-          <img class="bannerIcon" src="./images/engine.png" alt="starting engine">
-        </div>
-        <div>
-        <p class="questionInterval">Question: ${interval + 1}/5</p>
-        </div>`)
-        if (interval < 5){$('main').html(`<div class="questionBlock">
-        <img class="questionImg" src="${STORE[interval].img}">
-        
-        <form>
-            <fieldset>
-                <label class="answerBlock one"><input type="radio" value='${STORE[interval].questionOptions[0]}' name="answer" required><span>${STORE[interval].questionOptions[0]}</span></label>
-                <label class="answerBlock two"><input type="radio" value='${STORE[interval].questionOptions[1]}' name="answer" required><span>${STORE[interval].questionOptions[1]}</span></label>
-                <label class="answerBlock three"><input type="radio" value='${STORE[interval].questionOptions[2]}' name="answer" required><span>${STORE[interval].questionOptions[2]}</span></label>
-                <label class="answerBlock four"><input type="radio" value='${STORE[interval].questionOptions[3]}' name="answer" required><span>${STORE[interval].questionOptions[3]}</span></label>
-                <button type="submit" class="submitButton">Submit</button>
-            </fieldset>
-        </form>
-        
-        </div>`);
+    console.log('inside of generatequestion')
+    event.preventDefault();
+    $('header').html(`
+    <div class="topBanner">
+        <p class="questionRightInterval">${score}/5</p>
+        <img class="bannerIcon" src="./images/engine.png" alt="starting engine">
+    </div>
+    <div>
+    <p class="questionInterval">Question: ${interval + 1}/5</p>
+    </div>`);
 
-
-    } else {
-
-        console.log("quiz is over");
-
-        if (score < 3){
-            $('header').find('.questionInterval').remove();
-            $('main').html(`
-        <div class="loserBlock">
-            <img class="loserIcon" src="./images/handbrake.png">
-        
-            <h2>Thanks for trying but it looks like you need to check your 
-            engine and try again!</h2>
-            <button type="button" class="restartButton">Take the quiz again</button>
-        
-        </div>`);
+    loadQuestion();
     
-    } else {    
-        $('header').find('.questionInterval').remove();
-        $('main').html(`
-        <div class="winnerBlock">
-            <img class="winnerIcon" src="./images/car-key.png">
-        
-            <h2 class="resultH">Great Job! Looks like you really are a car junkie!</h2>
-            <button type="button" class="restartButton">Take the quiz again</button>
-        
-        </div>`);
-
-        }
-    }
-    })
 }
 
 //THIS WILL RESET THE QUIZ
-
-$('main').on('click', '.restartButton', function(){
-    console.log("restart button clicked");
-    startQuizScreen();
-    clear();
-})
 
 
 //
@@ -204,11 +128,98 @@ function startQuizScreen() {
         <button class='beginQuiz'>Begin Quiz</button>
         <p>Note: Pick the option that the car originates from</p>
     </div>`);
+}
 
+function allHandlers(){
     $('main').on('click', '.beginQuiz', function(){
         startQuiz();
         $('.initial').removeClass();
     });
+
+    $('main').on('click', '.nextQuestion', function (event) {
+        generateNewQuestion();
+    });
+
+
+    $('main').on('click', '.restartButton', function(){
+        console.log("restart button clicked");
+        startQuizScreen();
+        clear();
+    });
+
+
+    $('main').submit(function (event) {
+        event.preventDefault();
+        let selectedAnswer = $('input:checked');
+        let answer = selectedAnswer.val();
+        let correctAnswer = `${STORE[interval].correntAnswer}`;
+
+        if (correctAnswer === answer) {
+            console.log('You are right!');
+            rightAnswer();
+        } else {
+            console.log('Wrong! The correct answer is: ' + correctAnswer);
+            wrongAnswer();
+        }
+        countInterval();
+        $('.questionBlock').remove();
+
+
+        console.log(selectedAnswer);
+        console.log(answer);
+        console.log(correctAnswer);
+
+    });
+
+    $('main').on('click', '.nextQuestion', function(){
+        if (interval < 5) {
+            $('main').html(`<div class="questionBlock">
+            <img class="questionImg" src="${STORE[interval].img}">
+            
+            <form>
+                <fieldset>
+                    <label class="answerBlock one"><input type="radio" value='${STORE[interval].questionOptions[0]}' name="answer" required><span>${STORE[interval].questionOptions[0]}</span></label>
+                    <label class="answerBlock two"><input type="radio" value='${STORE[interval].questionOptions[1]}' name="answer" required><span>${STORE[interval].questionOptions[1]}</span></label>
+                    <label class="answerBlock three"><input type="radio" value='${STORE[interval].questionOptions[2]}' name="answer" required><span>${STORE[interval].questionOptions[2]}</span></label>
+                    <label class="answerBlock four"><input type="radio" value='${STORE[interval].questionOptions[3]}' name="answer" required><span>${STORE[interval].questionOptions[3]}</span></label>
+                    <button type="submit" class="submitButton">Submit</button>
+                </fieldset>
+            </form>
+            
+            </div>`);
+        } else {
+    
+            console.log("quiz is over");
+    
+            if (score < 3){
+                $('header').find('.questionInterval').remove();
+                $('main').html(`
+            <div class="loserBlock">
+                <img class="loserIcon" src="./images/handbrake.png">
+            
+                <h2>Thanks for trying but it looks like you need to check your 
+                engine and try again!</h2>
+                <button type="button" class="restartButton">Take the quiz again</button>
+            
+            </div>`);
+        
+        } else {    
+            $('header').find('.questionInterval').remove();
+            $('main').html(`
+            <div class="winnerBlock">
+                <img class="winnerIcon" src="./images/car-key.png">
+            
+                <h2 class="resultH">Great Job! Looks like you really are a car junkie!</h2>
+                <button type="button" class="restartButton">Take the quiz again</button>
+            
+            </div>`);
+    
+            }
+    }
+});
+
+
 }
 
+$(allHandlers);
 $(startQuizScreen);
