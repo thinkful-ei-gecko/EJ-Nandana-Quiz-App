@@ -4,24 +4,8 @@
 let interval = 0;
 let score = 0;
 
-// function randomNumbergenerator(){
-//     let questionArray=[1];
-//     for (let i=1;questionArray.length<5;i++){
-//       let randomNumber=Math.floor(Math.random()*10);
-//       if(questionArray.indexOf(randomNumber) === -1){
-//         questionArray.push(randomNumber);
-//       }
-
-//     }
-//     return questionArray;
-//    }
-
-// let car = randomNumbergenerator();
-
-
-// console.log(car);
-
 function loadQuestion() {
+    console.log('loadQuestion');
     $('main').append(`<div class="questionBlock">
     <img class="questionImg" src="${STORE[interval].img}">
     
@@ -36,6 +20,7 @@ function loadQuestion() {
     </form>
     
     </div>`);
+    checkQuestion();
 
 }
 
@@ -76,7 +61,7 @@ function rightAnswer() {
         <p class="questionInterval">Question: ${interval + 1}/5</p>
         </div>`)
 
-    $('main').append(`<div class="rightAnswer">
+    $('main').html(`<div class="rightAnswer">
     <img class="rightImg" src="./images/like.png">
     
     <h2 class="">YOU GOT IT RIGHT!</h2>
@@ -84,7 +69,6 @@ function rightAnswer() {
     
     </div>`);
 
-    console.log(score);
     generateNewQuestion();
 }
 
@@ -98,16 +82,17 @@ function wrongAnswer() {
         <div>
         <p class="questionInterval">Question: ${interval + 1}/5</p>
         </div>`)
-    $('main').append(`<div class="wrongAnswer">
+    $('main').html(`<div class="wrongAnswer">
     <img class="wrongImg" src="./images/tools.png" alt="tools making a X sign">
     
-    <h2 class="wrongH">YOU GOT IT WRONG!</h2>
-    <p class="wrongP">The correct answer was ${correctAnswer}!</p>
+    <h2 class="">YOU GOT IT WRONG!</h2>
+    <p class="">The correct answer was ${correctAnswer}!</p>
 
     <button class="nextQuestion">Next Question</button>
     
     </div>`);
-    console.log()
+    console.log(interval);
+    console.log(score);
     generateNewQuestion();
 }
 
@@ -131,7 +116,7 @@ function generateNewQuestion() {
         <div>
         <p class="questionInterval">Question: ${interval + 1}/5</p>
         </div>`)
-        if (interval < 5){$('main').append(`<div class="questionBlock">
+        if (interval < 5){$('main').html(`<div class="questionBlock">
         <img class="questionImg" src="${STORE[interval].img}">
         
         <form>
@@ -145,13 +130,15 @@ function generateNewQuestion() {
         </form>
         
         </div>`);
+
+
     } else {
-        $('main').on('click', '.restartButton', function (event) {
-            location.reload();
-          });
+
+        console.log("quiz is over");
+
         if (score < 3){
             $('header').find('.questionInterval').remove();
-            $('main').append(`
+            $('main').html(`
         <div class="loserBlock">
             <img class="loserIcon" src="./images/handbrake.png">
         
@@ -159,10 +146,11 @@ function generateNewQuestion() {
             engine and try again!</h2>
             <button type="button" class="restartButton">Take the quiz again</button>
         
-        </div>`);} else {
-
+        </div>`);
+    
+    } else {    
         $('header').find('.questionInterval').remove();
-        $('main').append(`
+        $('main').html(`
         <div class="winnerBlock">
             <img class="winnerIcon" src="./images/car-key.png">
         
@@ -176,22 +164,51 @@ function generateNewQuestion() {
     })
 }
 
+//THIS WILL RESET THE QUIZ
+
+$('main').on('click', '.restartButton', function(){
+    console.log("restart button clicked");
+    startQuizScreen();
+    clear();
+})
+
+
+//
+
+function clear(){
+    score = 0;
+    interval = 0;
+}
+
 function startQuiz() {
-    $('main').on('click', '.beginQuiz', function (event) {
-        event.preventDefault();
-        $('main').find('.myForm').remove();
-        $('header').find('div').remove();
-        loadQuestion();
-        $('header').append(`
+        $('main').empty();
+        $('header').empty();
+        $('header').html(`
         <div class="topBanner">
           <p class="questionRightInterval">${score}/5</p>
           <img class="bannerIcon" src="./images/engine.png" alt="starting engine">
         </div>
         <div>
         <p class="questionInterval">Question: ${interval + 1}/5</p>
-        </div>`)
+        </div>`);
+        loadQuestion();
+}
+
+function startQuizScreen() {
+    console.log("startQuizScreen");
+    $('header').addClass('initial');
+    $('header').html(`<img class="icon" src="./images/engine.png" alt="starting engine">`);
+    $('main').html(`
+    <div class="block1">
+        <h1>Start Your Engine</h1>
+        <button class='beginQuiz'>Begin Quiz</button>
+        <p>Note: Pick the option that the car originates from</p>
+    </div>`);
+
+    $('main').on('click', '.beginQuiz', function(){
+        startQuiz();
+        $('.initial').removeClass();
     });
 }
 
-$(startQuiz);
-$(checkQuestion);
+$(startQuizScreen);
