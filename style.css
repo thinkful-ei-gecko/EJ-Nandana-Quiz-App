@@ -79,13 +79,20 @@ body {
     width: 100%;
     text-align: center;
     height: 10vh;
-    margin-top: 9vh;
+    margin-top: 4.6vh;
 }
 
-.topBanner p {
+.questionRightInterval {
     font-size: 4vh;
     margin-right: 2vh;
     margin-top: 4vh;
+}
+
+.questionInterval {
+    font-size: 3vh;
+    display: block;
+    text-align: center;
+    margin-top: 1vh;
 }
 
 .topBanner img {
@@ -112,6 +119,7 @@ body {
     background-color: rgb(226, 123, 123);
     font-size: 3.2vh;
     border: none;
+    border: solid 1px black;
 }
 /*
 ---------------THIS WILL BE THE RIGHT BLOCK---------------
@@ -259,6 +267,7 @@ body {
     transition: all 0.3s ease-out;
     font-size: 3vh;
     font-weight: bold;
+    border: solid 1px black;
 }
 
 input {

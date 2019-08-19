@@ -69,8 +69,11 @@ function rightAnswer() {
     updateScore();
     $('header').html(`
         <div class="topBanner">
-          <p>${score}/5</p>
+          <p class="questionRightInterval">${score}/5</p>
           <img class="bannerIcon" src="./images/engine.png" alt="starting engine">
+        </div>
+        <div>
+        <p class="questionInterval">Question: ${interval + 1}/5</p>
         </div>`)
 
     $('main').append(`<div class="rightAnswer">
@@ -89,8 +92,11 @@ function wrongAnswer() {
     let correctAnswer = `${STORE[interval].correntAnswer}`;
     $('header').html(`
         <div class="topBanner">
-          <p>${score}/5</p>
+          <p class="questionRightInterval">${score}/5</p>
           <img class="bannerIcon" src="./images/engine.png" alt="starting engine">
+        </div>
+        <div>
+        <p class="questionInterval">Question: ${interval + 1}/5</p>
         </div>`)
     $('main').append(`<div class="wrongAnswer">
     <img class="wrongImg" src="./images/tools.png" alt="tools making a X sign">
@@ -119,8 +125,11 @@ function generateNewQuestion() {
         $('main').find('div').remove();
         $('header').html(`
         <div class="topBanner">
-          <p>${score}/5</p>
+          <p class="questionRightInterval">${score}/5</p>
           <img class="bannerIcon" src="./images/engine.png" alt="starting engine">
+        </div>
+        <div>
+        <p class="questionInterval">Question: ${interval + 1}/5</p>
         </div>`)
         if (interval < 5){$('main').append(`<div class="questionBlock">
         <img class="questionImg" src="${STORE[interval].img}">
@@ -141,6 +150,7 @@ function generateNewQuestion() {
             location.reload();
           });
         if (score < 3){
+            $('header').find('.questionInterval').remove();
             $('main').append(`
         <div class="loserBlock">
             <img class="loserIcon" src="./images/handbrake.png">
@@ -150,7 +160,8 @@ function generateNewQuestion() {
             <button type="button" class="restartButton">Take the quiz again</button>
         
         </div>`);} else {
-        
+
+        $('header').find('.questionInterval').remove();
         $('main').append(`
         <div class="winnerBlock">
             <img class="winnerIcon" src="./images/car-key.png">
@@ -173,8 +184,11 @@ function startQuiz() {
         loadQuestion();
         $('header').append(`
         <div class="topBanner">
-          <p>${score}/5</p>
+          <p class="questionRightInterval">${score}/5</p>
           <img class="bannerIcon" src="./images/engine.png" alt="starting engine">
+        </div>
+        <div>
+        <p class="questionInterval">Question: ${interval + 1}/5</p>
         </div>`)
     });
 }
