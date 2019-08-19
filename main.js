@@ -59,7 +59,7 @@ function registerCallbackCheckAnswer() {
 
     let selectedImage = null;
     let userMessage = '';
-
+    let correctAnswerMessage = '';
     let correctAnswer = `${STORE[globalQuestionNumber].correntAnswer}`;
 
     if (correctAnswer === answer) {
@@ -71,13 +71,14 @@ function registerCallbackCheckAnswer() {
       
       selectedImage = wrongImage; 
       userMessage = userMessageWrong;
-      
+      correctAnswerMessage = 'The correct answer is: ' + correctAnswer;      
     }
     $('header').find('#s1').html(`${globalScore}`);
     $('main').find('.questionBlock').remove();
     $('main').append(`<div class="checkAnswer">
     <img class="ansImg" src=${selectedImage}>
     <h2>${userMessage}</h2>
+    <h2>${correctAnswerMessage}</h3>
     <button class="buttonClass">Next Question</button>
     </div>`);
   });
