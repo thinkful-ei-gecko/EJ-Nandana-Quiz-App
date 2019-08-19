@@ -8,7 +8,7 @@ let score = 0;
 
 function randomNumbergenerator(){
   let questionArray=[];
-  for (let i=1;questionArray.length<5;i++){
+  for (let i=1;questionArray.length<6;i++){
     let randomNumber=Math.floor(Math.random()*10);
     if(questionArray.indexOf(randomNumber) === -1){
       questionArray.push(randomNumber);
@@ -193,7 +193,7 @@ function allHandlers(){
   });
 
   $('main').on('click', '.nextQuestion', function(){
-    if (interval < 5) {
+    if (interval + 1 < 6) {
         console.log("inside"+ interval);
       $('main').html(`<div class="questionBlock">
             <img class="questionImg" src="${STORE[config.questionNumber].img}">
