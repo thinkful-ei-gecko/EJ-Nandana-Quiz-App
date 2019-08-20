@@ -89,11 +89,18 @@ body {
     margin-top: 4vh;
 }
 
+.scoreboard {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .questionInterval {
     font-size: 3vh;
-    display: block;
     text-align: center;
-    margin-top: 1vh;
+    margin-top: 2vh;
+    margin-right: 2vh;
+    margin-left: 5vh;
 }
 
 .topBanner img {
@@ -101,7 +108,7 @@ body {
 }
 
 .questionBlock {
-    margin-top: 6vh;
+    margin-top: 4.8vh;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -281,7 +288,7 @@ body {
 
 .questionImg {
     height: 22vh;
-    width: 25vh;
+    width: 28vh;
     border-radius: 10%;
     margin: auto auto;
     margin-bottom: 5vh;
@@ -310,7 +317,7 @@ input {
     border: 2px solid #ffffff;
     transition: 0.2s all linear;
     outline: none;
-    margin-top: 2.8vh;
+    margin-top: 3.3vh;
 }
 
 span {
@@ -419,6 +426,13 @@ fieldset {
     }
 
     .winnerBlock {
+        width: 70vh;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 15vh;
+    }
+
+    .loserBlock {
         width: 70vh;
         margin-right: auto;
         margin-left: auto;

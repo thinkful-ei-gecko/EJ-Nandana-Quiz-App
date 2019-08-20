@@ -4,7 +4,7 @@
 const STORE = [{
   question: 'Lamborghini',
   questionOptions: ['Japan', 'Italy', 'United States', 'Switzerland'],
-  img: 'https://cdn.pixabay.com/photo/2015/12/22/22/04/lamborghini-1104868_1280.jpg',
+  img: 'https://www.stickpng.com/assets/images/580b585b2edbce24c47b2c8c.png',
   correntAnswer: 'Italy'
 }, {
   question: 'Porshe',
@@ -14,42 +14,42 @@ const STORE = [{
 }, {
   question: 'McLaren',
   questionOptions: ['Japan', 'Italy', 'United Kingdom', 'United States'],
-  img: 'https://cdn.pixabay.com/photo/2017/03/11/21/36/iaa-2135916_1280.jpg',
+  img: 'https://freepngimg.com/download/mclaren_logo/2-2-mclaren-logo-transparent.png',
   correntAnswer: 'United Kingdom'
 }, {
   question: 'Bentley',
   questionOptions: ['Spain', 'Sweden', 'United States', 'United Kingdom'],
-  img: 'https://images.unsplash.com/photo-1519572422788-07033d956866?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
+  img: 'https://upload.wikimedia.org/wikipedia/commons/6/62/Bentley_Continental_GT_-_Flickr_-_Alexandre_Pr%C3%A9vot_%2821%29.jpg',
   correntAnswer: 'United Kingdom'
 }, {
   question: 'Rolls Royce',
   questionOptions: ['United Kingdom', 'Germany', 'United States', 'Denmark'],
-  img: 'https://images.unsplash.com/photo-1521405617584-1d9867aecad3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
+  img: 'https://upload.wikimedia.org/wikipedia/commons/9/9e/Rolls_royce.png',
   correntAnswer: 'United Kingdom'
 }, {
   question: 'Mercedes Benz',
   questionOptions: ['Japan', 'United Kingdom', 'Germany', 'United States'],
-  img: 'https://images.unsplash.com/photo-1532578498858-e21a39e0a449?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
+  img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/862px-Mercedes-Logo.svg.png',
   correntAnswer: 'Germany'
 }, {
   question: 'Ford',
   questionOptions: ['Germany', 'Spain', 'United States', 'Italy'],
-  img: 'https://images.unsplash.com/photo-1530936541512-05ec5b6c6e71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
+  img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Ford_logo_flat.svg/1280px-Ford_logo_flat.svg.png',
   correntAnswer: 'United States'
 }, {
   question: 'BMW',
   questionOptions: ['Germany', 'Italy', 'Denmark', 'United States'],
-  img: 'https://images.unsplash.com/photo-1552234816-0ea7b995a55c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1001&q=80',
+  img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/1024px-BMW.svg.png',
   correntAnswer: 'Germany'
 }, {
   question: 'Cadillac',
   questionOptions: ['Germany', 'Japan', 'United States', 'Denmark'],
-  img: 'https://images.unsplash.com/photo-1457088846009-9dbcf9d7643d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
+  img: 'https://s3-eu-west-1.amazonaws.com/vivadoo/uploads/465481/full_f72e603e50754dce1a637cead17625b1.png',
   correntAnswer: 'United States'
 }, {
   question: 'Tesla',
   questionOptions: ['Japan', 'United States', 'Spain', 'United Kingdom'],
-  img: 'https://images.unsplash.com/photo-1518194951576-93eec1215e9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1399&q=80',
+  img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Tesla_T_symbol.svg/602px-Tesla_T_symbol.svg.png',
   correntAnswer: 'United States'
 }];
 

@@ -45,10 +45,10 @@ function rightAnswer() {
   updateScore();
   $('header').html(`
         <div class="topBanner">
-          <p class="questionRightInterval">${score}/5</p>
           <img class="bannerIcon" src="./images/engine.png" alt="starting engine">
         </div>
-        <div>
+        <div class="scoreboard">
+        <p class="questionInterval">Score: ${score}/5</p>
         <p class="questionInterval">Question: ${interval + 1}/5</p>
         </div>`);
 
@@ -67,10 +67,10 @@ function wrongAnswer() {
   let correctAnswer = `${STORE[config.questionNumber].correntAnswer}`;
   $('header').html(`
         <div class="topBanner">
-          <p class="questionRightInterval">${score}/5</p>
           <img class="bannerIcon" src="./images/engine.png" alt="starting engine">
         </div>
-        <div>
+        <div class="scoreboard">
+        <p class="questionInterval">Score: ${score}/5</p>
         <p class="questionInterval">Question: ${interval + 1}/5</p>
         </div>`);
   $('main').html(`<div class="wrongAnswer">
@@ -100,10 +100,10 @@ function generateNewQuestion() {
   event.preventDefault();
   $('header').html(`
     <div class="topBanner">
-        <p class="questionRightInterval">${score}/5</p>
         <img class="bannerIcon" src="./images/engine.png" alt="starting engine">
     </div>
-    <div>
+    <div class="scoreboard">
+    <p class="questionInterval">Score: ${score}/5</p>
     <p class="questionInterval">Question: ${interval + 1}/5</p>
     </div>`);
 
@@ -126,10 +126,10 @@ function startQuiz() {
   $('header').empty();
   $('header').html(`
         <div class="topBanner">
-          <p class="questionRightInterval">${score}/5</p>
           <img class="bannerIcon" src="./images/engine.png" alt="starting engine">
         </div>
-        <div>
+        <div class="scoreboard">
+        <p class="questionInterval">Score: ${score}/5</p>
         <p class="questionInterval">Question: ${interval + 1}/5</p>
         </div>`);
   config.questionNumberArray=randomNumbergenerator();
