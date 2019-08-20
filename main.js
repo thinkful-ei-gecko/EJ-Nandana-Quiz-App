@@ -214,7 +214,14 @@ function allHandlers(){
       console.log('quiz is over');
     
       if (score < 3){
-        $('header').find('.questionInterval').remove();
+        $('header').html(`
+        <div class="topBanner">
+            <img class="bannerIcon" src="./images/engine.png" alt="starting engine">
+        </div>
+        <div class="scoreboard">
+            <p class="questionInterval">Score: ${score}/5</p>
+            <p class="questionInterval">Question: ${interval}/5</p>
+        </div>`);
         $('main').html(`
             <div class="loserBlock">
                 <img class="loserIcon" src="./images/handbrake.png">
@@ -226,7 +233,14 @@ function allHandlers(){
             </div>`);
         
       } else {    
-        $('header').find('.questionInterval').remove();
+        $('header').html(`
+        <div class="topBanner">
+            <img class="bannerIcon" src="./images/engine.png" alt="starting engine">
+        </div>
+        <div class="scoreboard">
+            <p class="questionInterval">Score: ${score}/5</p>
+            <p class="questionInterval">Question: ${interval}/5</p>
+        </div>`);
         $('main').html(`
             <div class="winnerBlock">
                 <img class="winnerIcon" src="./images/car-key.png">
